@@ -203,4 +203,9 @@ $('#formModal').on('hidden.bs.modal', function (e) {
     let errorList = document.querySelector('.errors');
     $(errorList).addClass('d-none')
     errorList.innerHTML = '';
+
+    let formModal = document.querySelector('#formModal');
+    formModal.querySelector('.modal-body').querySelector('input[name="task[title]"]').value = '';
+    formModal.querySelector('.modal-body').querySelector('textarea[name="task[description]"]').value = '';
+    formModal.querySelector('.modal-body').querySelector('input[name="task[isCompleted]"]').checked = false;
 })
