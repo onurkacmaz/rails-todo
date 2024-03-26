@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,25 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_325_185_224) do
-  create_table 'tasks', force: :cascade do |t|
-    t.string 'title'
-    t.text 'description'
-    t.boolean 'isCompleted'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'user_id', null: false
-    t.index ['user_id'], name: 'index_tasks_on_user_id'
+ActiveRecord::Schema[7.1].define(version: 2024_03_25_185224) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "isCompleted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table 'auth', force: :cascade do |t|
-    t.string 'name'
-    t.boolean 'status'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'email'
-    t.string 'password'
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "password"
   end
 
-  add_foreign_key 'tasks', 'auth'
+  add_foreign_key "tasks", "users"
 end
