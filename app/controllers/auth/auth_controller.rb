@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Auth::AuthController < ApplicationController
+  before_action :is_authenticated, only: %i[login callback auth_failure]
   def callback
     auth = request.env['omniauth.auth']
     user = User.from_omniauth(auth)
