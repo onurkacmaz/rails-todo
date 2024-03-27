@@ -69,3 +69,5 @@ end
 
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'sentry-ruby'
+gem 'sentry-rails'
