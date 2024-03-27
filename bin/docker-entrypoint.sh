@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-rake db:create
+rake db:prepare
 rake db:migrate
 
 rails assets:precompile
