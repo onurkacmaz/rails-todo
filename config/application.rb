@@ -1,5 +1,4 @@
 require_relative "boot"
-require_relative '../lib/middleware/request_timer'
 
 require "rails/all"
 
@@ -27,6 +26,6 @@ module Todo
     # config.eager_load_paths << Rails.root.join("extras")
     config.secret_key_base = ENV['SECRET_KEY_BASE']
 
-    config.middleware.use RequestTimer
+    config.active_job.queue_adapter = :sneakers
   end
 end
