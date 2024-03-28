@@ -1,6 +1,8 @@
 require_relative "boot"
+require_relative '../lib/middleware/request_timer'
 
 require "rails/all"
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,5 +26,7 @@ module Todo
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.secret_key_base = ENV['SECRET_KEY_BASE']
+
+    config.middleware.use RequestTimer
   end
 end
