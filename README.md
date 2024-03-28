@@ -1,24 +1,50 @@
-# README
+# Ruby on Rails Todo Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project contains a simple todo application developed using Ruby on Rails. Users can add, edit, view, delete, and mark tasks as completed. Additionally, users can sign in with Google.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+To run the project on your local machine, follow these steps:
 
-* System dependencies
+1. Clone this repository:
 
-* Configuration
+```bash
+git clone https://github.com/onurkacmaz/rails-todo.git
+```
 
-* Database creation
+```bash
+cd rails-todo
+```
 
-* Database initialization
+2. Install the required gems:
 
-* How to run the test suite
+```bash
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Create the database:
 
-* Deployment instructions
+```bash
+rails db:create
+rails db:migrate
+```
 
-* ...
+4. Start the server:
+
+```bash
+rails server
+```
+
+## Docker
+
+```bash
+docker-compose up
+```
+
+## Attention
+
+### **DO NOT FORGET TO EDIT THE .env FILE**
+
+## Rake Tasks
+
+- `rake task:report::generate` - Generate a report for the tasks.
