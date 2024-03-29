@@ -10,6 +10,7 @@ class Auth::AuthController < ApplicationController
       session[:user_id] = user.id
       session[:user_name] = user.name
       session[:user_email] = user.email
+      session[:user_status] = user.status
       redirect_to tasks_path
     else
       redirect_to root_path
@@ -24,6 +25,7 @@ class Auth::AuthController < ApplicationController
     session[:user_id] = nil
     session[:user_name] = nil
     session[:user_email] = nil
+    session[:user_status] = nil
     redirect_to root_path
   end
 

@@ -6,6 +6,8 @@ RUN apt-get update -qq && apt-get install -y nodejs postgresql-client supervisor
 RUN mkdir -p /var/log/supervisor
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN touch /var/log/supervisor/supervisord.log
+RUN chmod +x /var/log/supervisor/supervisord.log
 
 # Uygulama kodunu çalışma dizinine kopyala
 WORKDIR /todo
