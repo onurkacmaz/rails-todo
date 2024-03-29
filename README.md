@@ -48,3 +48,4 @@ docker-compose up
 ## Rake Tasks
 
 - `rake task:report::generate` - Generate a report for the tasks.
+- `rake sneakers:run` - Run the sneakers worker.
