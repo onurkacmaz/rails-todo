@@ -2,7 +2,7 @@
 
 class AnalyzeReviewJob < ApplicationJob
   include Sneakers::Worker
-  queue_as 'reviews'
+  queue_as 'reviews.analyze'
 
   def work(msg)
     data = ActiveSupport::JSON.decode(msg)
